@@ -3,7 +3,7 @@ on:
  push:
     branches:
         - 'main'
-jops:
+jobs:
     name: Cd-Workflow
     runs-on: ubuntu-latest
     permissions:
