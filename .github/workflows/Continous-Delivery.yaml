@@ -3,15 +3,14 @@ on:
  push:
     branches:
         - 'main'
-        
+
 permissions:
     contents: read
     packages: write
 
 jobs:
-    name: Cd-Workflow
+    CD-Work:
     runs-on: ubuntu-latest
-
     steps:
       - name: Chechkout Repo
         uses: actions/checkout@v5
