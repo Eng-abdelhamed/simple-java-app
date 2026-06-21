@@ -1,0 +1,23 @@
+name: Java workflow
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  UnitTesting:
+    name: CI-Workflow
+    runs-on: ubuntu-latest
+    container:
+      image: maven:amazoncorretto
+    steps:
+      - name: Checking Out The Repo
+        uses: actions/checkout@v4
+        
+      - name: Build The Java App
+        run: mvn clean package
+        
+      - name: Run Tests
+        run:  mvn test
+
+    
