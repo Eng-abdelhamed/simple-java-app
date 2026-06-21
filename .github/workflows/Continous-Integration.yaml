@@ -12,7 +12,7 @@ jobs:
       image: maven:amazoncorretto
     steps:
       - name: Checking Out The Repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         
       - name: Build The Java App
         run: mvn clean package
