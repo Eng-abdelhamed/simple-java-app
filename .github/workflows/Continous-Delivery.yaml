@@ -60,14 +60,10 @@ jobs:
           aws-secret-access-key: ${{ env.AWS_ACESS_KEY_ID }}
           aws-region: ${{ env.aws_region }}
 
-       - name: K*S
-         uses: azure/k8s-set-context@v5
-         with:
-         method: kubeconfig
-           kubeconfig:  ${{ secrets.KUBECONFIG }}
-
+  
        - name: Deploy To K8s
          run: |
+            aws eks update-kubeconfig --region us-east-1 --name amazing-jazz-shark
             kubectl apply -f k8s/deployment.yaml
         
 
