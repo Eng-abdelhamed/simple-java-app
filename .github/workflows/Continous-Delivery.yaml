@@ -53,7 +53,7 @@ jobs:
           IMAGE: ${{secrets.DOCKER_USERNAME}}/simplejavaapp:${{github.sha}}
           REPLICAS: ${{secrets.REPLICAS}}
  
-          
+
        - name: AWS credentials
          uses: aws-actions/configure-aws-credentials@v1
          with:
@@ -61,6 +61,7 @@ jobs:
           aws-secret-access-key: ${{ env.AWS_ACESS_KEY_ID }}
           aws-region: ${{ env.aws_region }}
 
+          
        - name: Deploy To K8s
          run: |
             aws eks update-kubeconfig --region us-east-1 --name amazing-jazz-shark
