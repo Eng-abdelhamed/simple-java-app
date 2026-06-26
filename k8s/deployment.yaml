@@ -8,7 +8,7 @@ spec:
   selector:
     matchLabels:
         app: java-app
-  replicas: 1
+  replicas: _{_REPLICAS_}_
   strategy:
     type: RollingUpdate
   template:
@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: java-app
-          image: dinagamal/javaapp:latest
+          image: _{_IMAGE_}_
           ports:
             - containerPort: 80
               protocol: TCP
