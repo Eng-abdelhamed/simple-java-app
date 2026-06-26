@@ -49,7 +49,7 @@ jobs:
            tokenPrefix: '_{_'
            tokenSuffix: '_}_'
            files: '["k8s/deployment.yaml"]'
-        env:
+         env:
           IMAGE: ${{secrets.DOCKER_USERNAME}}/simplejavaapp:${{github.sha}}
           REPLICAS: ${{secrets.REPLICAS}}
 
