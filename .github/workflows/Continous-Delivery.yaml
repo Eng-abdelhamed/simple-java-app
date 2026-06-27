@@ -60,6 +60,10 @@ jobs:
       runs-on: ubuntu-latest
       needs: [CD-Work]
       steps:
+
+       - name: Checkout
+         uses: actions/checkout@v5
+         
        - name: AWS credentials
          uses: aws-actions/configure-aws-credentials@v1
          with:
