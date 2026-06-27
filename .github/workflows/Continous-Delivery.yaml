@@ -66,9 +66,8 @@ jobs:
           aws-access-key-id: ${{ env.AWS_ACCESS_KEY }}
           aws-secret-access-key: ${{ env.AWS_ACESS_KEY_ID }}
           aws-region: ${{ env.aws_region }}
-          
-       - name: AWS credentials
-         uses: aws-actions/configure-aws-credentials@v1
-         with:
-          aws-access-key-id: ${{ env.AWS_ACCESS_KEY }}
-       
+
+       - name: Deploy To K8s
+         run: |
+          aws eks update-kubeconfig --region us-east-1 --name amazing-jazz-shark
+          kubectl apply -f k8s/deployment.yaml
