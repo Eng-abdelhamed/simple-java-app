@@ -5,10 +5,10 @@ metadata:
   labels:
     app: java-app
 spec:
+  replicas: 2
   selector:
     matchLabels:
-        app: java-app
-  replicas: _{_REPLICAS_}_
+      app: java-app
   strategy:
     type: RollingUpdate
   template:
@@ -18,8 +18,7 @@ spec:
     spec:
       containers:
         - name: java-app
-          image: _{_IMAGE_}_
+          image: enabdelhamed/simplejavaapp:4c9174308df78d868cd0e7a728424acba2fc87e7
           ports:
             - containerPort: 80
-              protocol: TCP
           imagePullPolicy: Always
