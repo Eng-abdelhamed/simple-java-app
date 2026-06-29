@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: java-app
-          image: enabdelhamed/simplejavaapp:4c9174308df78d868cd0e7a728424acba2fc87e7
+          image: enabdelhamed/solarsystem:3349e045ef767440b43ac272222cd31aca89cf17
           ports:
             - containerPort: 80
           imagePullPolicy: Always
